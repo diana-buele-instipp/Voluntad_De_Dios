@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+    /* ======= ESTILOS GENERALES ======= */
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        background-image: url("{% static 'img/fondo_logo.png' %}"); /* logo rosado de fondo */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 55%;
+    }
+
+    /* ======= BARRA SUPERIOR ======= */
+    .top-bar {
+        background: #ffde59;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    .contact {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+    }
+
+    .register-btn {
+        background-color: #ffd900;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* ======= CONTENIDO PRINCIPAL ======= */
+    .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 🔹 Esto evita que la doctora se baje */
+    padding: 0 30px; /* 🔹 Quitamos espacio vertical */
+    flex-wrap: wrap;
+    }
+
+    /* Caja de información */
+    .info-box {
+    background-color: rgba(255, 230, 240, 0.9);
+    border-radius: 15px;
+    padding: 2px 2px;
+    max-width: 450px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* 🔹 Centramos el contenido dentro del cuadro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+    align-items: center;     /* centra horizontalmente */
+    text-align: center;      /* centra el texto */
+    height: 100%;            /* ocupa todo el alto posible */
+    margin-top: 95px; /* Ajusta este valor para mover el cuadro rosado más abajo */
+}
+
+    .info-box h1 {
+        color: #444;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .info-box ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .info-box ul li {
+        font-size: 16px;
+        color: #e86ca9;
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    .info-box ul li::before {
+        content: "✔";
+        color: gray;
+        margin-right: 8px;
+    }
+
+    /* Botones */
+    .buttons {
+        margin-top: 15px;
+    }
+
+    .buttons button {
+        background-color: #ffde59;
+        border: none;
+        padding: 10px 20px;
+        margin-right: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+        background-color: #f7c600;
+    }
+
+    /* Imagen de la doctora */
+    .right {
+        text-align: center;
+    }
+
+    .doctora-img {
+    max-height: 550px;
+    margin-bottom: 0;
+    margin-top: -20px; /* Ajusta este valor para mover la doctora más arriba */
+   }
+
+    .doctor-info {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .doctor-info small {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    /* Ajuste responsivo */
+    @media (max-width: 900px) {
+        .content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .info-box {
+            margin-bottom: 30px;
+        }
+    }
+
+    /* Imagen del título fuera del cuadro */
+.titulo-container {
+    text-align: left;
+    margin-bottom: 0px;
+    width: 95%;
+}
+
+.titulo-imagen {
+    width: 400px;  /* 🔹 Ajusta el tamaño como prefieras */
+    height: auto;
+    display: inline-block;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<main>
+    <!-- 🔹 Imagen de título ARRIBA del cuadro y doctora -->
+<div class="titulo-container">
+    <img src="{% static 'img/voluntad_dios.png' %}" alt="Voluntad de Dios" class="titulo-imagen">
+</div>
+
+<section class="content">
+    <!-- 🔹 Cuadro rosado -->
+    <div class="info-box">
+        <h1 class="title">🔍 La consulta incluye:</h1>
+        <ul>
+            <h3><li>Anamnesis detallada</li></h3>
+            <h3><li>Toma de signos vitales</li></h3>
+            <h3><li>Medidas antropométricas (peso, talla, IMC)</li></h3>
+            <h3><li>Asesoría nutricional</li></h3>
+            <h3><li>Exploración física completa</li></h3>
+            <h3><li>Glucosa capilar</li></h3>
+            <h3><li>Certificado de salud (si se requiere)</li></h3>
+        </ul>
+        <div class="buttons">
+            <button>Consulta</button>
+            <button>Consulta Online</button>
+        </div>
+    </div>
+
+    <div class="right">
+        <img src="{% static 'img/doctora.png' %}" alt="Doctora" class="doctora-img">
+    </div>
+</section>
+</main>
+{% endblock %}

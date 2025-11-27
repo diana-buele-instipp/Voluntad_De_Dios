@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Consultorio Voluntad De Dios</title>
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            background-image: url("{% static 'images/fondo_logo.png' %}"); /* ← logo de fondo */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 60%;
+        }
+
+        nav {
+            background-color: #ffde59;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 40px;
+            flex-wrap: wrap;
+        }
+
+        nav img {
+            height: 60px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .phone i {
+            margin-right: 5px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 40px 80px;
+        }
+
+        /* Título */
+        .title {
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 38px;
+            color: #b18866;
+            margin-top: 30px;
+        }
+
+        .decor {
+            text-align: center;
+            font-size: 20px;
+            color: #b18866;
+        }
+
+        /* Caja de información */
+        .info-box {
+            background-color: rgba(255, 240, 240, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 420px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .info-box h3 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box ul li {
+            font-size: 16px;
+            color: #f284b5;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .info-box ul li::before {
+            content: "✔";
+            color: gray;
+            margin-right: 8px;
+        }
+
+        /* Botones */
+        .btn-consulta {
+            background-color: #ffde59;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 5px 0 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn-consulta:hover {
+            background-color: #f7c600;
+        }
+
+        /* Imagen doctora */
+        .doctor-section {
+            text-align: center;
+        }
+
+        .doctor-section img {
+            height: 430px;
+        }
+
+        .doctor-caption {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .doctor-caption small {
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <img src="{% static 'images/Logo.png' %}" alt="Logo">
+        <div>
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Información</a>
+        </div>
+        <div class="phone">
+            <i class="fas fa-phone"></i> 0988605465
+        </div>
+    </nav>
+
+{% block content %}
+    <div class="title">Voluntad de Dios</div>
+    <div class="decor">──────── ⟡ ────────</div>
+
+    <section class="hero">
+        <!-- Información -->
+        <div class="info-box">
+            <h3>🔍 La consulta incluye:</h3>
+            <ul>
+                <li>Anamnesis detallada</li>
+                <li>Toma de signos vitales</li>
+                <li>Medidas antropométricas (peso, talla, IMC)</li>
+                <li>Asesoría nutricional</li>
+                <li>Exploración física completa</li>
+                <li>Glucosa capilar</li>
+                <li>Certificado de salud (si se requiere)</li>
+            </ul>
+            <button class="btn-consulta">Consulta</button>
+            <button class="btn-consulta">Consulta Online</button>
+        </div>
+
+        <!-- Imagen doctora -->
+        <div class="doctor-section">
+            <img src="{% static 'images/doctora.png' %}" alt="Dra. Doménica Echeverría">
+            <div class="doctor-caption">
+                Dra. Doménica Echeverría L.<br>
+                Médico General<br>
+                <small>Magíster en nutrición del niño y adolescente</small>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+</body>
+</html>

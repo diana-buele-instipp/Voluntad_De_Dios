@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* Encabezado */
+  .encabezado {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 290px 20px 20px;
+  }
+
+  .titulo-imagen {
+  width: 450px !important; /* 👈 fuerza el nuevo tamaño */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+  .decor {
+    font-size: 20px;
+    color: #ffde59;
+    margin-top: -10px;
+  }
+
+  .encabezado img {
+    width: 250px;
+  }
+
+  .encabezado img.titulo-imagen {
+  width: 450px;
+  height: auto;
+}
+
+  /* Botón "Nuestros Servicios" */
+  .boton-servicios {
+    text-align: right;
+    margin: 20px 0 20px 0;
+    padding: 0 240px 0px 0px;
+  }
+
+  .boton-servicios button {
+    background-color: #ffde59;
+    border: none;
+    padding: 18px 50px;
+    border-radius: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease;
+  }
+
+  .boton-servicios button:hover {
+    background-color: #f5d02e;
+  }
+
+  /* Contenido principal */
+  .servicios-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 20px 50px 0px;
+  }
+
+  /* Imagen izquierda */
+  .servicios-image {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: left;
+  }
+
+  .servicios-image img {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  /* Caja de servicios */
+  .servicios-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .servicios-box {
+    width: 100%;
+    max-width: 620px;
+    background-color: #ffe9f1;
+    border: 3px solid #fce5ae;
+    padding: 40px 50px;
+    border-radius: 20px;
+  }
+
+  .servicios-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .servicios-box ul li {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e67ea6;
+    margin-bottom: 18px;
+    text-align: center; /* 🔹 centra las letras dentro del cuadro */
+    display: center;
+    align-items: center; /* 🔹 centra el contenido horizontalmente */
+    gap: 12px;
+  }
+
+  .servicios-box ul li img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Responsivo */
+  @media screen and (max-width: 992px) {
+    .servicios-wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .servicios-image, .servicios-texto {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .servicios-image img {
+      width: 100%;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Encabezado -->
+<div class="encabezado">
+  <div>
+    <div>
+  <img src="{% static 'img/voluntad_dios.png' %}" alt="Voluntad De Dios" class="titulo-imagen">
+    </div>
+  </div>
+  <img src="{% static 'img/logo_DE.png' %}" alt="Logo DE">
+</div>
+
+<!-- Botón -->
+<div class="boton-servicios">
+  <button id="btn-servicios">Nuestros Servicios</button>
+</div>
+
+<!-- Contenido principal -->
+<div id="servicios" class="servicios-wrapper">
+  <!-- Imagen izquierda -->
+  <div class="servicios-image">
+    <img src="{% static 'img/Consulta_Niño.png' %}" alt="Consulta Niño">
+  </div>
+
+  <!-- Lista de servicios -->
+  <div class="servicios-texto">
+    <div class="servicios-box">
+      <ul>
+        <li><img src="{% static 'img/recien_nacido.png' %}" alt="">Consulta del recién nacido</li>
+        <li><img src="{% static 'img/respiratoria.png' %}" alt="">Enfermedades respiratorias</li>
+        <li><img src="{% static 'img/piel.png' %}" alt="">Enfermedades de la piel</li>
+        <li><img src="{% static 'img/gastrointestinales.png' %}" alt="">Enfermedades gastrointestinales</li>
+        <li><img src="{% static 'img/niño_sano.png' %}" alt="">Control del niño sano</li>
+        <li><img src="{% static 'img/adolecente.png' %}" alt="">Consulta para adolescentes (salud sexual, emocional, pubertad)</li>
+        <li><img src="{% static 'img/malnutricion.png' %}" alt="">Manejo de malnutrición, sobrepeso u obesidad infantil</li>
+        <li><img src="{% static 'img/certificado.png' %}" alt="">Certificado de salud</li>
+        <li><img src="{% static 'img/nebulizaciones.png' %}" alt="">Nebulizaciones</li>
+        <li><img src="{% static 'img/emocional.png' %}" alt="">Evaluación inicial del desarrollo emocional y conductual</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.getElementById("btn-servicios").addEventListener("click", function() {
+    document.getElementById("servicios").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+</script>
+{% endblock %}

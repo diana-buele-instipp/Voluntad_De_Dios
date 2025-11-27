@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+  /* ======== SECCIÓN PRINCIPAL ======== */
+  .info-section {
+    padding: 30px 5%;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  .info-section h2 {
+    font-size: 30px;
+    color: #f2c11d;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  /* ======== MAPA GRANDE ARRIBA ======== */
+  .mapa-superior {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .mapa-superior iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+  }
+
+  /* ======== CAJA DE INFORMACIÓN ======== */
+  .info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    max-width: 895px;
+    margin: 0 auto;
+    background-color: #FEF3F3;
+    border: 2px solid #f5c6cb;
+    border-radius: 15px;
+    padding: 0px 0px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ======== INFORMACIÓN IZQUIERDA ======== */
+  .info-text {
+    flex: 1 1 400px;
+    text-align: left;
+  }
+
+  .info-text p {
+    margin:15px 0;
+    font-size: 17px;
+    color: #f2c11d;
+  }
+
+  .info-text strong {
+    color: #f284b5;
+  }
+
+  .amarillo {
+    color: #f2c11d;
+    font-weight: bold;
+  }
+
+  .rosado {
+    color: #f284b5;
+    font-weight: bold;
+  }
+
+  .amarillo {
+    color: #f2c11d;
+    font-weight: bold;
+  }
+
+  /* ======== DOCTORA DERECHA ======== */
+  .info-doctora {
+    flex: 1 1 350px;
+    text-align: center;
+  }
+
+  .info-doctora img {
+    width: 280px;
+    border-radius: 12px;
+  }
+
+  .doctor-info {
+    margin-top: 10px;
+    background-color: #fff6e5;
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+    line-height: 1.4;
+    display: inline-block;
+  }
+
+  /* ======== RESPONSIVE ======== */
+  @media (max-width: 768px) {
+    .info-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .info-text {
+      text-align: center;
+    }
+
+    .info-doctora img {
+      width: 220px;
+    }
+  }
+
+  .info-text p {
+  margin-left: 35px; /* 🔹 mueve todos los textos un poco a la derecha */
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="info-section">
+  <h2>UBICACIÓN</h2>
+
+  <!-- Mapa grande centrado -->
+  <div class="mapa-superior">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3786.2371740166823!2d-79.96207812502831!3d-3.2682892967066923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMTYnMDUuOCJTIDc5wrA1NyczNC4yIlc!5e1!3m2!1ses!2sec!4v1751349390607!5m2!1ses!2sec"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  <!-- Caja de información con doctora -->
+  <div class="info-container">
+    <!-- Texto de información -->
+    <div class="info-text">
+      <p><strong>Dirección:</strong></p>
+      <p class="amarillo">Machala San Martín Entre Buenavista y Séptima Este</p>
+
+      <p><strong>Dra:</strong>
+        <span class="amarillo">Echeverría Loayza Domenica Lilibeth</span>
+      </p>
+
+      <p><strong>Horario De Atención</strong></p>
+      <p><span class="amarillo">Lunes a Viernes</span></p>
+      <p><span class="rosado">08am a 08pm</span></p>
+      <p><span class="amarillo">Sábado</span></p>
+      <p><span class="rosado">08am a 04pm</span></p>
+    </div>
+
+    <!-- Imagen doctora -->
+    <div class="info-doctora">
+      <img src="{% static 'img/doctora.png' %}" alt="Doctora">
+      <div class="doctor-info">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
