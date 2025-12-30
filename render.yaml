@@ -15,10 +15,10 @@ services:
       - key: PYTHON_VERSION
         value: 3.11
       - key: DJANGO_SUPERUSER_USERNAME
-        value: 
+        value: Diana
       - key: DJANGO_SUPERUSER_EMAIL
-        value: 
+        value: bueleerasdiana@gmail.com
       - key: DJANGO_SUPERUSER_PASSWORD
-        value: 
+        value: 120120
       - key: SECRET_KEY
-        value: 
+        value: django-insecure-o+hbuiy&%e#*a4ev_8rfu^_#u!26jka3@7a-k)sawn8+7+*!x1
