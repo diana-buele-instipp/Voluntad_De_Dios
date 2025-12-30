@@ -9,3 +9,5 @@ def servicios(request):
     return render(request,'servicios.html')
 def informacion(request):
     return render(request,'informacion.html')
+def login_view(request):
+    return render(request, "login.html")
