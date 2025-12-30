@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: Voluntad_De_Dios
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+      python create_superuser.py
+    startCommand: gunicorn cosultorio.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: cosultorio.settings
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: DJANGO_SUPERUSER_USERNAME
+        value: 
+      - key: DJANGO_SUPERUSER_EMAIL
+        value: 
+      - key: DJANGO_SUPERUSER_PASSWORD
+        value: 
+      - key: SECRET_KEY
+        value: 
