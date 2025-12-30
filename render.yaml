@@ -13,7 +13,7 @@ services:
       - key: DJANGO_SETTINGS_MODULE
         value: cosultorio.settings
       - key: PYTHON_VERSION
-        value: 3.11
+        value: 5.2.7
       - key: DJANGO_SUPERUSER_USERNAME
         value: Diana
       - key: DJANGO_SUPERUSER_EMAIL
