@@ -35,6 +35,6 @@ def test_login_page_loads_correctly():
 
     # 5. Verifica que las imágenes estáticas existan en el HTML
     assert "images/doctora.png" in contenido, "❌ No aparece la imagen de la doctora"
-    assert "images/Logo.png" in contenido, "❌ No aparece el logo estático"
+    assert "images/logo.png" in contenido, "❌ No aparece el logo estático"
 
     print("✅ Prueba de integración del login ejecutada correctamente")

@@ -45,7 +45,7 @@ def test_inte_inicio_renderiza_correctamente(client):
     assert "doctora.png" in contenido
 
     # 9️⃣ Elementos provenientes de base.html
-    assert "Logo.png" in contenido     # logo del header
+    assert "logo.png" in contenido     # logo del header
     assert "Inicio" in contenido       # menú
     assert "Servicios" in contenido
     assert "Información" in contenido

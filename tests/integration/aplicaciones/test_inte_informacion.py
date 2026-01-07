@@ -43,7 +43,7 @@ def test_inte_informacion_renderiza_correctamente(client):
     assert "doctora.png" in contenido
 
     # 🔟 Asegura que proviene de la plantilla base (logo del header)
-    assert "Logo.png" in contenido  
+    assert "logo.png" in contenido  
 
     # 1️⃣1️⃣ Verifica que existen los enlaces del menú
     assert "Inicio" in contenido
