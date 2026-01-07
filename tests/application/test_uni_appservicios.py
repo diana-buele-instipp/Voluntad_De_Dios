@@ -41,7 +41,7 @@ class ServiciosViewTest(TestCase):
 
     def test_imagen_principal_existe(self):
         response = self.client.get(self.url)
-        self.assertContains(response, "consulta_nino.png")
+        self.assertContains(response, "consulta_bebe.png")
 
     def test_boton_servicios_existe(self):
         response = self.client.get(self.url)

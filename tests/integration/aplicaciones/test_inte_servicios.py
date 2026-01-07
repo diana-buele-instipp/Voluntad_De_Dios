@@ -33,8 +33,8 @@ def test_pagina_servicios_carga_correctamente():
 
     # 3) Verificar imágenes importantes
     assert "img/voluntad_dios.png" in contenido, "❌ Imagen del título no encontrada."
-    assert "img/logo_de.png" in contenido, "❌ Logo institucional no encontrado."
-    assert "img/consulta_nino.png" in contenido, "❌ Imagen de 'Consulta Nio' no cargada."
+    assert "img/logo_de.png" in contenido, "❌ logo de institucional no encontrado."
+    assert "img/consulta_bebe.png" in contenido, "❌ Imagen de 'consulta bebe' no cargada."
 
     # 4) Lista de servicios
     servicios_esperados = [
