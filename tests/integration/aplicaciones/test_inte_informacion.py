@@ -42,8 +42,8 @@ def test_inte_informacion_renderiza_correctamente(client):
     # 9️⃣ Verificar que la imagen de la doctora está en la página
     assert "doctora.png" in contenido
 
-    # 🔟 Asegura que proviene de la plantilla base (logo del header)
-    assert "logo.png" in contenido  
+    # 🔟 Asegura que proviene de la plantilla base (logo_consultorio del header)
+    assert "logo_consultorio.png" in contenido  
 
     # 1️⃣1️⃣ Verifica que existen los enlaces del menú
     assert "Inicio" in contenido

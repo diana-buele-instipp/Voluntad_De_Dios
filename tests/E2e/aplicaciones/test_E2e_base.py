@@ -40,7 +40,7 @@ class BaseE2ETest(StaticLiveServerTestCase):
         body_text = self.driver.find_element(By.TAG_NAME, "body").text
         self.assertIn("0988605465", body_text)
 
-    def test_logo_is_visible(self):
+    def test_logo_consultorio_is_visible(self):
         self.driver.get(self.live_server_url)
-        logo = self.driver.find_element(By.TAG_NAME, "img")
-        self.assertTrue(logo.is_displayed())
+        logo_consultorio = self.driver.find_element(By.TAG_NAME, "img")
+        self.assertTrue(logo_consultorio.is_displayed())
