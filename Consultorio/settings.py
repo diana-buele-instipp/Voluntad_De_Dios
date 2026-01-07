@@ -78,6 +78,7 @@ STATIC_URL = '/static/'
 
 # Django copiará aquí TODOS los estáticos al hacer collectstatic
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # ⚠️ NO pongas STATICFILES_DIRS en Render
 # (causa el error porque la carpeta no existe)
